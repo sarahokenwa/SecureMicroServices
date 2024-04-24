@@ -14,9 +14,12 @@ namespace Movies.Domain.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
-        public string Title { get; set; }
+        public string? Description { get; set; }
         public string Genre { get; set; }
-        public DateTimeOffset Created { get; set; } = DateTimeOffset.Now;
+        public DateTimeOffset CreatedOn { get; set; } = DateTimeOffset.Now;
+        public string Rating { get; set; }
+        public string ImageUrl { get; set; }
+        public DateTime ReleaseDate { get; set;} = DateTime.Now;
+        public string Owner { get; set; }
     }
 }
