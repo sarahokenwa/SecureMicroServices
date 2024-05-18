@@ -4,6 +4,7 @@ using System.Diagnostics;
 
 namespace IdentityServer.Controllers
 {
+    [Route("ui/[controller]")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

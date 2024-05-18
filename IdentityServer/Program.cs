@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
 builder.Services.AddIdentityServer()
     .AddInMemoryClients(Config.Clients)
     //.AddInMemoryClients(new List<Client>())
@@ -31,6 +32,11 @@ app.UseRouting();
 app.UseIdentityServer();
 
 app.UseAuthorization();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapDefaultControllerRoute();
+});
 
 app.MapControllerRoute(
     name: "default",
